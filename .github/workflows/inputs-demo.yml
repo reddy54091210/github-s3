@@ -7,10 +7,19 @@ on:
         description: 'choose the environment to deploy'
         required: true
         default: 'dev'
+        type: choice
+        options:
+          - dev
+          - tst
+          - prod
+
+      artifact_tag:
+        description: 'choose the git tag to deploy'
+        required: true
 
 jobs:
   Inputs-demo:
     runs-on: ubuntu-latest
     steps:
       - name: deploy the app
-        run: echo "Deploying the application to ${{ inputs.environment }}"
+        run: echo "Deploying version ${{ inputs.artifact_tag }} to ${{ inputs.environment }}"
