@@ -1,10 +1,13 @@
 name: Env Demo
-on: workflow_dsipach
+
+on: workflow_dispatch
+
 env:
- APP_ENV: "dev"
+  APP_ENV: "dev"
+
 jobs:
   env_demo:
     runs-on: ubuntu-latest
     steps:
-     -name: connecting to env:
-      run: echo "App is connecting to $APP_ENV"
+      - name: Connecting to env
+        run: echo "App is connecting to $APP_ENV"
