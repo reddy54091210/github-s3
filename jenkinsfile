@@ -1,0 +1,18 @@
+pipeline{
+steps{
+stgae("build"){
+echo 'building the application'
+}
+}
+stgae("test")
+steps{
+echo 'tesing phase'
+}
+}
+steps{"deploy"}{
+steps{
+echo 'deploying the app'
+}
+}
+}
+ }
